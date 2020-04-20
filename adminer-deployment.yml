@@ -23,10 +23,10 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: mysql-service
+  name: adminer-service
 spec:
   selector:
-    app: mysql-container
+    app: adminer-container
   ports:
     - protocol: TCP
       port: 8080
