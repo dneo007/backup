@@ -1,0 +1,33 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: adminer-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: adminer-container
+  template:
+    metadata:
+      labels:
+        app: adminer-container
+        tier: backend
+    spec:
+      containers:
+        - name: adminer-container
+          image: adminer
+          ports:
+            - containerPort: 8080
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: mysql-service
+spec:
+  selector:
+    app: mysql-container
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
