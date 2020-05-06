@@ -17,6 +17,7 @@ spec:
       containers:
       - name: django
         image: dneo/djangocon:v1.0
+        imagePullPolicy: Always
         ports:
           - containerPort: 80
         env:
