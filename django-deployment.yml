@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: django
-        image: dneo/djangocon:kube
+        image: dneo/djangocon:v1.0
         ports:
           - containerPort: 80
         env:
